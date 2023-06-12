@@ -1,0 +1,180 @@
+.app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+}
+
+.main_chatcontainer {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 790px) {
+  .main_chatcontainer {
+    width: 100%;
+  }
+}
+
+.side_bar {
+  height: 100vh;
+  width: 25%;
+  background: rgb(0, 0, 0);
+  color: white;
+  transition: all 0.5s ease-out;
+}
+
+@media screen and (max-width: 790px) {
+  .side_bar {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+  }
+}
+
+.sidebar_open {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  transition: all 0.5s ease-in;
+  width: 100%;
+  z-index: 2;
+}
+
+.chats_bubble {
+  display: none;
+}
+
+@media screen and (max-width: 790px) {
+  .chats_bubble {
+    display: block;
+  }
+}
+
+.current_profile {
+  width: 95%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: black;
+  color: white;
+  border-radius: 3rem;
+  margin: 1rem 0;
+}
+
+.current_profile h5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 6rem;
+}
+
+.current_profile h5 span {
+  margin: 0 5px;
+}
+
+.current_profile button {
+  padding: 5px 20px;
+  border: none;
+  background: rgba(0, 0, 255, 0.5);
+  color: white;
+  border-radius: 3rem;
+}
+.current_profile button:hover {
+  background: blue;
+}
+
+.added_users {
+  display: flex;
+  flex-direction: column;
+}
+
+.add_userscontainer {
+  max-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgb(38, 38, 38);
+  overflow: scroll;
+}
+
+.add_userscontainer::-webkit-scrollbar {
+  display: none;
+}
+
+.search_input_bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search_input {
+  width: 85%;
+  height: 2rem;
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  background: rgb(163, 163, 163);
+  margin: 1rem 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.search_input:hover {
+  background: white;
+}
+
+.profile_container {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.profile_container:hover {
+  background: rgb(40, 40, 40);
+}
+
+.profile_image {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+  margin: 0 0.7rem;
+}
+
+.profile_info {
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.profile_title {
+  font-size: 0.8rem;
+  color: white;
+}
+
+.profile_email {
+  font-size: 0.7rem;
+  color: rgba(216, 216, 216, 0.7);
+}
+
+.profile_button {
+  padding: 5px 5px;
+  border-radius: 1rem;
+  border: none;
+  min-width: 4rem;
+  background: blue;
+  color: white;
+  margin: 0 10px;
+}

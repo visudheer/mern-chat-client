@@ -1,0 +1,132 @@
+.chat_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+}
+
+.chat_window {
+  height: 90vh;
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.receiver_container {
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.receiver_container p {
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 10px 20px;
+  border-radius: 5rem;
+  box-shadow: 0 2px 30px rgb(211, 211, 211);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.receiver_container p span {
+  font-size: 1rem;
+  color: #000;
+}
+
+.chat_box {
+  overflow: scroll;
+  padding: 20px 0;
+  width: 100%;
+  max-height: 70vh;
+  background: rgb(224, 224, 224);
+  border-radius: 3rem;
+  margin-bottom: 1rem;
+}
+
+.chat_box::-webkit-scrollbar {
+  display: none;
+}
+
+.chat_form {
+  height: 3rem;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.chat_form input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px;
+  outline: none;
+  border: none;
+  background: rgba(177, 177, 177, 0.2);
+}
+
+.chat_form button {
+  width: 10rem;
+  height: 100%;
+  border: none;
+  background: black;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat_form button:hover {
+  background: blue;
+}
+
+.chat_message {
+  background: black;
+  padding: 8px 10px;
+  margin: 10px 20px;
+  border-radius: 3rem;
+  color: white;
+  height: 2.3rem;
+  animation: fade 0.3s linear;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.message_box {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  position: relative;
+}
+
+.message_time {
+  font-size: 0.5rem;
+  margin: 0 0.5rem;
+  opacity: 0.7;
+}
+
+.chat_sender {
+  padding: 8px 10px;
+  margin: 10px 1rem;
+  border-radius: 3rem;
+  background: blue;
+  position: absolute;
+  right: 0;
+}
