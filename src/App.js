@@ -13,7 +13,7 @@ import Chat from "./components/Chat";
 import { apiAuth } from "./config";
 import { IoChatbubblesOutline, IoCloseCircleOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
-import { useNavigate } from "react-router-dom";
+
 
 const App = () => {
   const [user] = useAuthState(auth);
@@ -22,7 +22,7 @@ const App = () => {
   const [filteredusers, setFilteredusers] = useState([]);
   const [addedusers, setAddedusers] = useState([]);
   const [sidebarstate, setSidebarstate] = useState(false);
-  const navigate = useNavigate();
+
 
   useEffect(() => {
     const pusher = new Pusher(process.env.REACT_APP_PUSHER_TOKEN, {
@@ -218,7 +218,6 @@ const App = () => {
           <button
             onClick={() => {
               auth.signOut();
-              navigate("/", {});
             }}
           >
             Sign out
