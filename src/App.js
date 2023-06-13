@@ -17,7 +17,6 @@ import Chat from "./components/Chat";
 const App = () => {
   const [user] = useAuthState(auth);
   const [users, setUsers] = useState([]);
-  const [search, setSearch] = useState();
   const [filteredusers, setFilteredusers] = useState([]);
   const [addedusers, setAddedusers] = useState([]);
   const [sidebarstate, setSidebarstate] = useState(false);
@@ -45,6 +44,10 @@ const App = () => {
       .then((users) => setAddedusers(users.data));
 
     if (user) {
+      axios.get("/getactiveusers", apiAuth).then((users) => {
+        setUsers(users.data);
+      });
+
       (async () => {
         await axios
           .post(
@@ -74,18 +77,6 @@ const App = () => {
     }
   }, [user]);
 
-  useEffect(() => {
-    axios.get("/getactiveusers", apiAuth).then((users) => {
-      setUsers(users.data);
-    });
-
-    setFilteredusers(users.filter((item) => item.email.includes(search)));
-
-    if (search === "") {
-      setFilteredusers([]);
-    }
-  }, [users, search]);
-
   const addUser = (e, item) => {
     axios
       .post(
@@ -111,7 +102,16 @@ const App = () => {
             <input
               className="search_input"
               type="text"
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => {
+                console.log("seee");
+                setFilteredusers(
+                  users.filter((item) => item.email.includes(e.target.value))
+                );
+
+                if (e.target.value === "") {
+                  setFilteredusers([]);
+                }
+              }}
               placeholder="Search"
             />
             <TfiSearch />
