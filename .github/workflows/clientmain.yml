@@ -24,4 +24,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: yarn install
-    - run: PORT=3000 pm2 restart mern-chat-client
+    - run: pm2 restart mern-chat-client
