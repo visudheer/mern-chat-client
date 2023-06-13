@@ -4,16 +4,15 @@ import "./styles/App.css";
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import axios from "./axios";
-import Login from "./components/Login";
 import { TfiSearch } from "react-icons/tfi";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { FaUserCheck } from "react-icons/fa";
-import { Link, Route, Routes } from "react-router-dom";
-import Chat from "./components/Chat";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { apiAuth } from "./config";
 import { IoChatbubblesOutline, IoCloseCircleOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
-
+import Login from "./components/Login";
+import Chat from "./components/Chat";
 
 const App = () => {
   const [user] = useAuthState(auth);
@@ -22,7 +21,7 @@ const App = () => {
   const [filteredusers, setFilteredusers] = useState([]);
   const [addedusers, setAddedusers] = useState([]);
   const [sidebarstate, setSidebarstate] = useState(false);
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     const pusher = new Pusher(process.env.REACT_APP_PUSHER_TOKEN, {
@@ -218,6 +217,7 @@ const App = () => {
           <button
             onClick={() => {
               auth.signOut();
+              navigate("/", {});
             }}
           >
             Sign out
