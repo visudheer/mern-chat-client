@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { auth } from "../firebase";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import "../styles/Login.css";
 
 export default function Login() {
@@ -9,7 +9,7 @@ export default function Login() {
   const googleSignIn = () => {
     setLoading(true);
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider);
+    signInWithPopup(auth, provider);
   };
 
   auth.beforeAuthStateChanged(() => {
