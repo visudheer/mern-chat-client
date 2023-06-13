@@ -225,7 +225,6 @@ const App = () => {
         </div>
 
         <Routes>
-          <Route path="/" Component={Chat} />
           <Route path="/rooms/:room/:id" Component={Chat} />
         </Routes>
       </div>
