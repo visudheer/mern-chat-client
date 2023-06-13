@@ -104,7 +104,7 @@ const App = () => {
               type="text"
               onChange={(e) => {
                 setFilteredusers(
-                  users.filter((item) => item.email.includes(e.target.value))
+                  users.filter((item) => item.email.includes(e.target.value.toLowerCase()))
                 );
 
                 if (e.target.value === "") {
