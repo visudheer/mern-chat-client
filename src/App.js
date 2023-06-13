@@ -103,7 +103,6 @@ const App = () => {
               className="search_input"
               type="text"
               onChange={(e) => {
-                console.log("seee");
                 setFilteredusers(
                   users.filter((item) => item.email.includes(e.target.value))
                 );
